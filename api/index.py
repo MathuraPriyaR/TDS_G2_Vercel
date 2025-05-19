@@ -19,7 +19,6 @@ def handler(request, response):
     marks = []
     for i in range(len(marks_data)):
         if(marks_data[i].get("name") in names[0]):
-            print(marks_data[i])
             marks.append(marks_data[i].get("marks"))
 
     # print(response.json({"marks": marks}))
