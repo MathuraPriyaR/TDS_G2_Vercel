@@ -2,7 +2,7 @@ import json
 from urllib.parse import parse_qs
 
 # Load JSON once
-with open("api/q-vercel-python.json", "r") as f:
+with open("marks.json", "r") as f:
     marks_data = json.load(f)
 
 def handler(request, response):
