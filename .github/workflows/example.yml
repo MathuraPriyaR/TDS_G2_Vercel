@@ -1,0 +1,17 @@
+name: Example Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run step with email 22f1000395@ds.study.iitm.ac.in
+      run: echo "This step name contains the email address"

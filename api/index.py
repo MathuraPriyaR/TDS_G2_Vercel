@@ -1,6 +1,7 @@
 import json
 from urllib.parse import parse_qs
 
+
 # Load JSON once
 with open("marks.json", "r") as f:
     marks_data = json.load(f)
@@ -21,5 +22,17 @@ def handler(request, response):
         if(marks_data[i].get("name") in names[0]):
             marks.append(marks_data[i].get("marks"))
 
-    # print(response.json({"marks": marks}))
     return response.json({"marks": marks})
+
+
+
+from http.server import BaseHTTPRequestHandler
+ 
+class handler(BaseHTTPRequestHandler):
+ 
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type','text/plain')
+        self.end_headers()
+        self.wfile.write('Hello, world!'.encode('utf-8'))
+        return
